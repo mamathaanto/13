@@ -1,0 +1,49 @@
+{
+  "itemunit": [
+    {
+      "ItemUnit": "case",
+      "ParentId": 1,
+      "Con_factor": 10,
+      "Status": true,
+      "CreatedOn": "tues",
+      "CreatedBy": "rose",
+      "id": 3
+    },
+    {
+      "ItemUnit": "gm",
+      "ParentId": 9,
+      "Con_factor": 2,
+      "Status": true,
+      "CreatedOn": "thue",
+      "CreatedBy": "paul",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "ItemUnit": "gm",
+      "ParentId": 100000,
+      "Con_factor": 1,
+      "Status": true,
+      "CreatedOn": "2022-11-29T18:30:00.000Z",
+      "CreatedBy": "rose"
+    },
+    {
+      "id": 7,
+      "ItemUnit": "kg",
+      "ParentId": 10,
+      "Con_factor": 25000,
+      "Status": true,
+      "CreatedOn": "2022-11-21T18:30:00.000Z",
+      "CreatedBy": "remya"
+    },
+    {
+      "id": 8,
+      "ItemUnit": "kg",
+      "ParentId": "100000",
+      "Con_factor": "12",
+      "Status": true,
+      "CreatedOn": "2022-11-21T18:30:00.000Z",
+      "CreatedBy": "mam"
+    }
+  ]
+}

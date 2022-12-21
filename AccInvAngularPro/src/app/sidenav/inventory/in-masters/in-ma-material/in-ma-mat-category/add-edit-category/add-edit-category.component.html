@@ -1,0 +1,63 @@
+
+<div class="form-froup row">
+
+
+    <h1
+    style="border-bottom-style:solid;
+    border-bottom-color:white;
+    border-bottom-width:1px;"
+    class="text-center">Category</h1>
+
+  
+    <label class="col-sm-2 col-form-label">Item Category</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="ItemCategory"
+        placeholder="Enter Item Category">
+    </div>
+    </div>
+
+
+<div class="form-froup row">
+    <label class="col-sm-2 col-form-label">ParentId</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="ParentId">
+            <option [value]="0">None</option>
+            <option *ngFor="let data of ItemCategoryList" [value]="data.ItemCategoryId">
+                {{data.ItemCategory}}
+            </option>
+        </select>
+    </div> 
+</div>
+
+
+<div class="form-froup row">
+    <label class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-10">
+            <select class="form-control" [(ngModel)]="Status">
+                <option selected [value]="0">Active</option>
+                <option [value]="1">Deactive</option>
+            </select>
+        </div>
+</div>
+
+
+<div class="form-froup row">
+    <label class="col-sm-2 col-form-label">CreatedOn</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CreatedOn">
+    </div>
+</div>
+
+<div class="form-froup row">
+    <label class="col-sm-2 col-form-label">CreatedBy</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CreatedBy">
+    </div>
+</div>
+<button (click)="addItemCategory()" *ngIf="cat.ItemCategoryId==0" class="btn btn-primary float-right">
+    Add
+</button>
+
+<button (click)="updateItemCategory()" *ngIf="cat.ItemCategoryId!=0" class="btn btn-primary float-right">
+    Update
+</button>

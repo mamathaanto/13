@@ -1,0 +1,145 @@
+
+<div class="row text-center align-center">
+<div class="col-sm-2">
+<button class="btn btn-secondary" (click)="openpopup('')" >Add</button>
+</div>
+</div>
+<br>
+
+
+<div class="row two">
+    <div class="col-sm d-flex justify-content-center align-items-center text-center">
+<div class="mat-elevation-z8"> 
+    
+ <div style="background-color:skyblue;height:40px;" class="text-center" >Chart Of Account</div>
+<table mat-table [dataSource]="finaldata" matSort class="mat-elevation-z8 table table-striped">
+<ng-container>
+</ng-container>
+ 
+<ng-container matColumnDef="ChartOfAccountId">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-left"><b>Id</b></th>
+      <td mat-cell *matCellDef="let element" class="text-left">{{element.ChartOfAccountId}}</td>
+</ng-container>
+
+        
+<ng-container matColumnDef="LFCode" class="text-center"  >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left"><b>LFCode</b></th>
+            <td mat-cell *matCellDef="let element" class="text-left" > {{element.LFCode}} </td>
+</ng-container>
+  
+      
+<ng-container matColumnDef="AccountName"  >
+            <th></th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left" ><b>Name </b></th>
+            <td mat-cell *matCellDef="let element" class="text-left" > {{element.AccountName}} </td>
+</ng-container>
+
+<div  >
+<ng-container matColumnDef="AccGroupId"  >
+            <th></th>
+            <th hidden  mat-header-cell *matHeaderCellDef mat-sort-header class="text-left" ><b>GroupId</b> </th>
+            <td hidden  mat-cell  *matCellDef="let element" class="text-left" > {{element.AccGroupId}} </td>
+</ng-container>
+</div>
+
+<div >
+<ng-container matColumnDef="ParentId"  >
+            <th></th>
+            <th mat-header-cell hidden  *matHeaderCellDef mat-sort-header class="text-left" ><b>ParentId</b></th>
+            <td mat-cell hidden *matCellDef="let element" class="text-left" > {{element.ParentId}} </td>
+</ng-container>
+</div>  
+
+<div >
+<ng-container matColumnDef="ParentCode"  >
+            <th></th>
+            <th mat-header-cell hidden  *matHeaderCellDef mat-sort-header class="text-left" ><b>ParentCode</b> </th>
+            <td mat-cell hidden *matCellDef="let element" class="text-left" > {{element.ParentCode}} </td>
+</ng-container>
+</div>
+
+<div >
+<ng-container matColumnDef="IsBalanceSheet"  >
+            <th></th>
+            <th mat-header-cell hidden  *matHeaderCellDef mat-sort-header class="text-left" ><b>BalanceSheet</b> </th>
+            <td mat-cell hidden *matCellDef="let element" class="text-left" > {{element.IsBalanceSheet}} </td>
+</ng-container>
+</div>
+
+
+<ng-container matColumnDef="Status"  >
+            <th></th>
+            <th mat-header-cell    *matHeaderCellDef mat-sort-header class="text-left" ><b>Status</b></th>
+            <td mat-cell  *matCellDef="let element" class="text-left" > {{element.Status}} </td>
+</ng-container>
+
+<div >
+<ng-container matColumnDef="CreatedOn"  >
+            <th></th>
+            <th mat-header-cell hidden  *matHeaderCellDef mat-sort-header class="text-left" ><b>CreatedOn</b> </th>
+            <td mat-cell hidden *matCellDef="let element" class="text-left" > {{element.CreatedOn|date:'dd-MM-yyyy'}} </td>
+</ng-container>
+</div>
+
+<div >
+<ng-container matColumnDef="CreatedBy"  >
+            <th></th>
+            <th hidden  mat-header-cell *matHeaderCellDef mat-sort-header class="text-left" ><b>CreatedBy</b> </th>
+            <td hidden  mat-cell *matCellDef="let element" class="text-left" > {{element.CreatedBy}} </td>
+</ng-container>
+</div>
+
+<ng-container matColumnDef="action" >
+            <th mat-header-cell *matHeaderCellDef class="text-center"><b>Action</b></th>
+            <td mat-cell *matCellDef="let element" class="text-center">
+             <span> <i
+                  class="fa-regular fa-pen-to-square fa-1x  text-secondary" 
+                  (click)="editchartofaccount(element.ChartOfAccountId)" ></i> </span> &nbsp;|
+            <span> <i
+                  class="fa-solid fa-trash fa-1x text-secondary" 
+                  (click)="removechartofaccount(element.ChartOfAccountId)" ></i>
+            </span> 
+            </td>
+</ng-container>
+          <tr mat-header-row *matHeaderRowDef="displaycolums"></tr>
+          <tr mat-row *matRowDef="let row; columns: displaycolums;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+</mat-paginator>
+
+
+  </div>
+  </div>
+  </div>
+
+
+ 
+
+  <!-- <div class="selectwrapper">
+    <div class="selectcontainer">
+    <mat-form-field appearance="fill">
+        <mat-label>country</mat-label>
+        <mat-select [(ngModel)]="countrySelected" (ngModelChange)="onCountrySelected()">
+          <mat-option *ngFor="let country of listcountry" [value]="country.iso2">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select [(ngModel)]="selectedState" (ngModelChange)="onStateSelected()" >
+          <mat-option *ngFor="let state of listState" [value]="state.iso2">
+            {{state.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let city of listCity" [value]="city.id">
+            {{city.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    </div> -->

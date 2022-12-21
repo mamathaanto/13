@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@angular/animations": "^15.0.0",
+    "@angular/cdk": "^15.0.0",
+    "alertifyjs": "^1.13.1"
+  }
+}

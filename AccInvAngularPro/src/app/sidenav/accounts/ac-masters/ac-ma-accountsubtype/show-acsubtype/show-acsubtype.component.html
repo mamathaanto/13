@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-sm-12 d-flex justify-content-start align-items-center">
+      <button class="btn btn-secondary" (click)="openpopup('')">Add</button>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-sm-12 d-flex justify-content-center align-items-center text-center">
+<div class="mat-elevation-z8">
+<h2  style="background-color:rgb(200, 234, 248); height:40px;">Account SubType</h2>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<mat-form-field>
+<mat-label>Filter</mat-label>
+<input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+</mat-form-field>
+</div>
+<div class="col-sm-4"></div>
+</div>
+<table mat-table [dataSource]="finaldata" matSort class="mat-elevation-z8 table table-striped">
+
+ <ng-container matColumnDef="AccSubTypeId ">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-left"><b>SubTypeId</b>  </th>
+          <td mat-cell *matCellDef="let element" class="text-left"> {{element.AccSubTypeId }} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="AccSubTypeCode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left"><b>SubTypeCode</b></th>
+          <td mat-cell *matCellDef="let element" class="text-left"> {{element.AccSubTypeCode}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="AccSubTypeName">
+          <th></th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left"> <b>SubTypeName</b> </th>
+          <td mat-cell *matCellDef="let element" class="text-left"> {{element.AccSubTypeName}} </td>
+</ng-container>
+
+  <ng-container matColumnDef="AccTypeId">
+          <th></th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left"> <b>TypeId </b></th>
+          <td mat-cell *matCellDef="let element" class="text-left"> {{element.AccTypeId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+          <th></th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left"><b>Status </b></th>
+          <td mat-cell *matCellDef="let element" class="text-left"> 
+            <p *ngIf="element.Status==true">Active</p> 
+          <p *ngIf="element.Status==false">Deactive</p></td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> <b>Action</b></th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            <span> <i class="fa-regular fa-pen-to-square fa-1x text-secondary"
+              (click)="editaccountsubtype(element.AccsubTypeId)"></i> </span> &nbsp;|
+            <span> <i class="fa-solid fa-trash fa-1x text-secondary"
+                (click)="removeaccountsubtype(element.AccsubTypeId)"></i>
+            </span>
+          </td>
+</ng-container>
+        <tr mat-header-row *matHeaderRowDef="displaycolums"></tr>
+        <tr mat-row *matRowDef="let row; columns: displaycolums;"></tr>
+      </table>
+<mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons>
+</mat-paginator>
+    </div>
+  </div>
+</div>

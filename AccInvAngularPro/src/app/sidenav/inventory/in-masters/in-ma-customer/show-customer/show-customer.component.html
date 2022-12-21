@@ -1,0 +1,205 @@
+<mat-dialog-content  >
+    <div class="row">
+        <div class="col-12-sm d-flex justify-content-start align-items-center text-center">
+      
+          <button class="d-flex justify-content-start" type="button" class="btn btn-secondary"
+            (click)="openpopup('')">Add NewCustomer</button><br>
+        </div>
+      </div><br>
+      
+      
+      
+      <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center align-items-center text-center">
+      
+      
+          <div class="mat-elevation-z8">
+      
+      <div style="height:40px;background-color:skyblue;" >Customer</div>
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                  
+          <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" #input>
+            </mat-form-field>
+          
+              </div>
+              <div class="col-sm-4"></div>
+          </div>
+      
+      
+      
+            <table mat-table [dataSource]="finaldata" matSort class="mat-elevation-z8" class="table table-striped">
+              <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+      
+              <!-- Position Column -->
+              <ng-container matColumnDef="CustomerId">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef  class="text-left"><b>Id</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CustomerId}} </td>
+              </ng-container>
+      
+              <!-- Name Column -->
+              <ng-container matColumnDef="LFCode">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef > <b> LFCode</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.LFCode}} </td>
+              </ng-container>
+      
+              <!-- Weight Column -->
+              <ng-container matColumnDef="CustomerName">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"><b>Name</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CustomerName}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="RegisterationNo">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"><b>RegistrationNo</b></th>
+                <td mat-cell  *matCellDef="let element"  class="text-left"> {{element.RegisterationNo}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="RegisterationDate">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>RegistrationDate </b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.RegisterationDate}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="LicenceNo">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>LicenceNo </b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.LicenceNo}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="MainPhone">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>MainPhone</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.MainPhone}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="WarehousePhone">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>WarehousePhone</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.WarehousePhone}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Mobile">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>Mobile</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.Mobile}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Fax">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>Fax</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.Fax}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="EmailId">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>EmailId</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.EmailId}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="CCMailId">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CCMailId</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left">{{element.CCMailId}}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Website">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>Website</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.Website}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="StreetAddress">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>StreetAddress</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.StreetAddress}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="City">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>City</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.City}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="State">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>State </b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.State}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="ZipCode">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>ZipCode</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.ZipCode}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Country">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>Country</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.Country}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="ContactPerson">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>ContactPerson</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.ContactPerson}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="ContactPersonPhone">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>ContactPersonPhone</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.ContactPersonPhone}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="CreditDays">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CreditDays</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CreditDays}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="CreditLimit">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CreditLimit</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CreditLimit}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="CustomerClass">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CustomerClass</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CustomerClass}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="IsForeign">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>IsForeign</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.IsForeign}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>Status</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.Status}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="CreatedOn">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CreatedOn</b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CreatedOn}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="CreatedBy">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-center"> <b>CreatedBy </b></th>
+                <td mat-cell *matCellDef="let element"  class="text-left"> {{element.CreatedBy}} </td>
+              </ng-container>
+    
+      
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef class="text-center"><b>Action</b> </th>
+                <td mat-cell *matCellDef="let element">
+                  <!-- <button mat-raised-button  (click)="edititem(element.ItemUnitId)"> -->
+                    <i (click)="edititem(element.CustomerId)"
+                      class="fa-regular fa-pen-to-square text-secondary fa-2x"></i>
+                    <!-- </button> -->
+                    |
+                  <!-- <button mat-raised-button  (click)="removeitem(element.ItemUnitId)"> -->
+                    <i (click)="removeitem(element.CustomerId)"
+                      class="fa-solid fa-trash text-secondary fa-2x"></i>
+                    <!-- </button> -->
+                </td>
+              </ng-container>
+      
+              <tr mat-header-row *matHeaderRowDef="displaycolums"></tr>
+              <tr mat-row *matRowDef="let row; columns: displaycolums;"></tr>
+      
+            </table>
+      
+            <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+      
+            </mat-paginator>
+          </div>
+      
+        </div>
+      </div>
+    </mat-dialog-content>
+

@@ -1,0 +1,85 @@
+{
+  "itemunit": [
+    {
+      "ItemUnit": "kg",
+      "ParentId": 2,
+      "Con_factor": 2,
+      "Status": true,
+      "CreatedOn": "tues",
+      "CreatedBy": "rema",
+      "id": 1
+    },
+    {
+      "ItemUnit": "kg",
+      "ParentId": 2,
+      "Con_factor": 2,
+      "Status": true,
+      "CreatedOn": "wed",
+      "CreatedBy": "ron",
+      "id": 2
+    },
+    {
+      "ItemUnit": "case",
+      "ParentId": 1,
+      "Con_factor": 10,
+      "Status": true,
+      "CreatedOn": "tues",
+      "CreatedBy": "rose",
+      "id": 3
+    },
+    {
+      "ItemUnit": "gm",
+      "ParentId": 9,
+      "Con_factor": 2,
+      "Status": true,
+      "CreatedOn": "thue",
+      "CreatedBy": "paul",
+      "id": 4
+    },
+    {
+      "ItemUnit": "kg",
+      "ParentId": 100000,
+      "Con_factor": 1,
+      "Status": true,
+      "CreatedOn": "tues",
+      "CreatedBy": "rose",
+      "id": 5
+    },
+    {
+      "ItemUnit": "gm",
+      "ParentId": 5,
+      "Con_factor": 25000,
+      "Status": true,
+      "CreatedOn": "thue",
+      "CreatedBy": "ro",
+      "id": 6
+    },
+    {
+      "ItemUnit": "kg",
+      "ParentId": 10,
+      "Con_factor": 25000,
+      "Status": true,
+      "CreatedOn": "tues",
+      "CreatedBy": "r",
+      "id": 7
+    },
+    {
+      "ItemUnit": "kg",
+      "ParentId": "100000",
+      "Con_factor": "12",
+      "Status": true,
+      "CreatedOn": "wed",
+      "CreatedBy": "ma",
+      "id": 8
+    },
+    {
+      "ItemUnit": "case",
+      "ParentId": "3",
+      "Con_factor": "3",
+      "Status": false,
+      "CreatedOn": "tues",
+      "CreatedBy": "ron",
+      "id": 9
+    }
+  ]
+}

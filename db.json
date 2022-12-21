@@ -1,0 +1,23 @@
+{
+  "itemunit": [
+    {
+      "ItemUnitId":"1",
+      "ItemUnit":"kg",
+      "ParentId":"2",
+      "Con_Factor": "2.5",
+      "Status":true,
+      "CreatedOn":"25052022",
+      "CreatedBy" : "rema"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
